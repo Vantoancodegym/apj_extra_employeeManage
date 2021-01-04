@@ -25,10 +25,9 @@ public class StaffManage {
         double salaryAverage=getSalaryAverage();
         for (Staff staff:staffList) {
             if (staff instanceof FulltimeStaff){
-                FulltimeStaff fulltimeStaff=(FulltimeStaff) staff;
-                int salary=fulltimeStaff.getActualSalary();
+                int salary=staff.getActualSalary();
                 if (salary<salaryAverage){
-                    System.out.println(fulltimeStaff);
+                    System.out.println(staff);
                 }
             }
         }
@@ -37,8 +36,7 @@ public class StaffManage {
         int totalSalary=0;
         for (Staff staff:staffList) {
             if (staff instanceof ParttimeStaff){
-                ParttimeStaff parttimeStaff=(ParttimeStaff) staff;
-                totalSalary+=parttimeStaff.getActualSalary();
+                totalSalary+=staff.getActualSalary();
             }
         }
         System.out.println(totalSalary);
